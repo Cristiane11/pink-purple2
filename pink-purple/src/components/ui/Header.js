@@ -20,7 +20,7 @@ function ElevationScroll(props) {
  
  function Header(props){
     return(
-        <ElevationScroll>
+        <ElevationScroll color='primary'>
             <AppBar position='fixed'>
                 <Toolbar>
                     Pink Purple
