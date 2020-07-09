@@ -25,7 +25,7 @@ function ElevationScroll(props) {
             <AppBar position='fixed'>
                 <Toolbar>
                     <Typography variant="h3">
-                    Pink Purple 
+                    Cristiane Abreu 
                     </Typography>
                    
                 </Toolbar>

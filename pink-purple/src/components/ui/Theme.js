@@ -11,7 +11,6 @@ export default createMuiTheme({
         common:{
             purple:`${lindoPurple}`,
             pink:`${lindoPink}`
-        
         },
         primary: {
             main: `${lindoPurple}`
@@ -21,7 +20,12 @@ export default createMuiTheme({
         }
       },
       typography:{
-          
+         h3:{
+            fontWeight:300,
+            color:'#ffffff',
+            fontFamily:'Sacramento',
+            position:'-webkit-sticky'
+        } 
       }
   });
 
