@@ -19,6 +19,9 @@ export default createMuiTheme({
         secondary: {
             main:`${lindoPink}`
         }
+      },
+      typography:{
+          
       }
   });
 
