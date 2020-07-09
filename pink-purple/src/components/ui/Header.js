@@ -3,12 +3,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 function ElevationScroll(props) {
     const { children} = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
     const trigger = useScrollTrigger({
       disableHysteresis: true,
       threshold: 0
@@ -19,8 +18,16 @@ function ElevationScroll(props) {
     });
   }
  
+  const useStyles = makeStyles(theme=>({
+    toolbarMargin:{
+        ...theme.mixins.toolbar
+    }
+}))
+
  function Header(props){
+     const classes = useStyles()
     return(
+        <React.Fragment>
         <ElevationScroll color='primary'>
             <AppBar position='fixed'>
                 <Toolbar>
@@ -31,7 +38,9 @@ function ElevationScroll(props) {
                 </Toolbar>
             </AppBar>
         </ElevationScroll>
-    )
+        <div className={classes.toolbarMargin}/>
+        </React.Fragment>
+    );
 
 }
 export default Header;

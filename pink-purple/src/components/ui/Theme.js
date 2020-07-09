@@ -24,7 +24,7 @@ export default createMuiTheme({
             fontWeight:300,
             color:'#ffffff',
             fontFamily:'Sacramento',
-            position:'-webkit-sticky'
+            position:'-webkit-sticky',
         } 
       }
   });
