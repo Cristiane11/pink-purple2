@@ -3,7 +3,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { makeStyles } from '@material-ui/core/styles';
-import logo from '../../assets/logo.png'
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import logo from '../../assets/logo.png';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 
 function ElevationScroll(props) {
@@ -21,10 +24,10 @@ function ElevationScroll(props) {
   const useStyles = makeStyles(theme=>({
     toolbarMargin:{
         ...theme.mixins.toolbar,
-        marginBottom:'7em'
+        marginBottom:'4em'
     },
     logo:{
-      height:"11em"  
+      height:"7em"  
     }
 }));
 
@@ -36,6 +39,14 @@ function ElevationScroll(props) {
             <AppBar position='fixed'>
                 <Toolbar disableGutters>
                 <img alt='my logo'className={classes.logo} src={logo}/>
+                <Tabs>
+                    <Tab label="Home"/>
+                    <Tab label="About"/>
+                    <Tab label="Contact"/>
+                    <Tab label="Portfolio"/>
+                    <Tab icon={<PhoneIcon />} label="704-891-4329" />
+                  
+                </Tabs>
                 </Toolbar>
             </AppBar>
         </ElevationScroll>
