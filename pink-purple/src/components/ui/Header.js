@@ -2,8 +2,8 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import logo from '../../assets/logo.png'
 
 
 function ElevationScroll(props) {
@@ -20,9 +20,13 @@ function ElevationScroll(props) {
  
   const useStyles = makeStyles(theme=>({
     toolbarMargin:{
-        ...theme.mixins.toolbar
+        ...theme.mixins.toolbar,
+        marginBottom:'7em'
+    },
+    logo:{
+      height:"11em"  
     }
-}))
+}));
 
  function Header(props){
      const classes = useStyles()
@@ -30,11 +34,8 @@ function ElevationScroll(props) {
         <React.Fragment>
         <ElevationScroll color='primary'>
             <AppBar position='fixed'>
-                <Toolbar>
-                    <Typography variant="h3">
-                    Cristiane Abreu 
-                    </Typography>
-                   
+                <Toolbar disableGutters>
+                <img alt='my logo'className={classes.logo} src={logo}/>
                 </Toolbar>
             </AppBar>
         </ElevationScroll>
