@@ -31,6 +31,9 @@ function ElevationScroll(props) {
     },
     tabContainer:{
         marginLeft:'auto'
+    },
+    tab:{
+        fontFamily:"Playfair"
     }
 }));
 
@@ -43,11 +46,11 @@ function ElevationScroll(props) {
                 <Toolbar disableGutters>
                 <img alt='my logo'className={classes.logo} src={logo}/>
                 <Tabs className={classes.tabContainer}>
-                    <Tab label="Home"/>
-                    <Tab label="About"/>
-                    <Tab label="Contact"/>
-                    <Tab label="Portfolio"/>
-                    <Tab icon={<PhoneIcon />} label="704-891-4329" />
+                    <Tab className={classes.tab} label="Home"/>
+                    <Tab className={classes.tab} label="About"/>
+                    <Tab className={classes.tab} label="Contact"/>
+                    <Tab className={classes.tab} label="Portfolio"/>
+                    <Tab className={classes.tab} icon={<PhoneIcon />} label="704-891-4329" />
                   
                 </Tabs>
                 </Toolbar>
