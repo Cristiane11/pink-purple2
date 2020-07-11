@@ -9,6 +9,7 @@ import logo from '../../assets/logo.png';
 import PhoneIcon from '@material-ui/icons/Phone';
 
 
+
 function ElevationScroll(props) {
     const { children} = props;
     const trigger = useScrollTrigger({
@@ -24,7 +25,7 @@ function ElevationScroll(props) {
   const useStyles = makeStyles(theme=>({
     toolbarMargin:{
         ...theme.mixins.toolbar,
-        marginBottom:'4em'
+        marginBottom:'3em'
     },
     logo:{
       height:"7em"  
@@ -33,11 +34,16 @@ function ElevationScroll(props) {
         marginLeft:'auto'
     },
     tab:{
-        fontFamily:"Playfair"
+        fontFamily:"Playfair",
+        textTransform:"none",
+        fontWeight:800,
+        fontSize:"2rem",
+        
+
     }
 }));
 
- function Header(props){
+ function Header(){
      const classes = useStyles()
     return(
         <React.Fragment>
@@ -50,8 +56,9 @@ function ElevationScroll(props) {
                     <Tab className={classes.tab} label="About"/>
                     <Tab className={classes.tab} label="Contact"/>
                     <Tab className={classes.tab} label="Portfolio"/>
-                    <Tab className={classes.tab} icon={<PhoneIcon />} label="704-891-4329" />
+                    <Tab className={classes.tab} icon={<PhoneIcon />}/>
                   
+   
                 </Tabs>
                 </Toolbar>
             </AppBar>
