@@ -20,12 +20,13 @@ export default createMuiTheme({
         }
       },
       typography:{
-         h3:{
-            fontWeight:300,
-            color:'#ffffff',
-            fontFamily:'Sacramento',
-            position:'-webkit-sticky',
-        } 
+        tab:{
+        fontFamily:"Playfair",
+        textTransform:"none",
+        fontWeight:800,
+        fontSize:"2rem",
+        color:"#590EED"
+        }
       }
   });
 

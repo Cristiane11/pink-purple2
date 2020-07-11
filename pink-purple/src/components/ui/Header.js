@@ -34,12 +34,9 @@ function ElevationScroll(props) {
         marginLeft:'auto'
     },
     tab:{
-        fontFamily:"Playfair",
-        textTransform:"none",
-        fontWeight:800,
-        fontSize:"2rem",
-        
-
+        ...theme.typography.tab,
+        minWidth:10,
+        marginLeft:"25px"
     }
 }));
 
@@ -57,7 +54,6 @@ function ElevationScroll(props) {
                     <Tab className={classes.tab} label="Contact"/>
                     <Tab className={classes.tab} label="Portfolio"/>
                     <Tab className={classes.tab} icon={<PhoneIcon />}/>
-                  
    
                 </Tabs>
                 </Toolbar>
