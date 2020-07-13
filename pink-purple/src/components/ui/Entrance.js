@@ -4,23 +4,21 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme=>({
   button:{
-      ...theme.mixins.button,
+      ...theme.customButton.button,
       color:'white',
-      fontFamily:"Playfair",
-      backgroundColor:"#590EED"
+      
   }
 }));
-
-
 
   function Entrance(){
     const classes = useStyles()
     return(
-       <div>
+      <React.Fragment>
          <Button variant="contained" color="secondary"className={classes.button}>
         About Me
         </Button>
-       </div> 
+       <div className={classes.customButton}/> 
+      </React.Fragment>
     )
 }
 export default Entrance;

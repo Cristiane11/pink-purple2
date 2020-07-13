@@ -26,7 +26,21 @@ export default createMuiTheme({
         fontWeight:800,
         fontSize:"2rem",
         color:"#590EED"
-        }
+        },
+      },
+      
+  customButton:{
+      button:{
+        color:'white',
+        fontFamily:"Sacramento",
+        backgroundColor:"#590EED",
+        marginLeft:'50px',
+        marginTop:'15px',
+        fontSize:"1.5rem",
+        fontWeight:200,
+        textTransform:"none"
       }
+      
+    } 
   });
 
