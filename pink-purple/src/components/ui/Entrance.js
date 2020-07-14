@@ -1,6 +1,9 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
+import About from "./About";
+
 
 const useStyles = makeStyles(theme=>({
   button:{
@@ -15,7 +18,7 @@ const useStyles = makeStyles(theme=>({
     return(
       <React.Fragment>
          <Button variant="contained" color="secondary"className={classes.button}>
-        About Me
+        <p component={Link} to="./About">About Me</p>
         </Button>
        <div className={classes.customButton}/> 
       </React.Fragment>
