@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
@@ -47,8 +47,19 @@ function ElevationScroll(props) {
      const[value,setValue] = useState(0);
       
      const handleChange = (e,value)=>{
-         setValue(value)
+         setValue(value);
      }
+     useEffect(()=>{
+        if(window.location.pathname==='/'&& value !==0){
+            setValue(0)
+          }else if (window.location.pathname==='/About'&& value !==1){
+            setValue(1)
+          }else if (window.location.pathname==='/Contact'&& value !==2){
+            setValue(2)
+          }else if (window.location.pathname==='/Portfolio'&& value !==3){
+            setValue(3);
+          }  
+     },[value]);
     return(
         <React.Fragment>
         <ElevationScroll color='primary'>
