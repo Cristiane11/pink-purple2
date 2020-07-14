@@ -53,7 +53,7 @@ function ElevationScroll(props) {
             <AppBar position='fixed'>
                 <Toolbar disableGutters>
                 <img alt='my logo'className={classes.logo} src={logo}/>
-                <Tabs value={value} onChange={handleChange} className={classes.tabContainer}>
+                <Tabs value={value} onChange={handleChange} indicatorColor='secondary' className={classes.tabContainer}>
                     <Tab className={classes.tab} label="Home"/>
                     <Tab className={classes.tab} label="About"/>
                     <Tab className={classes.tab} label="Contact"/>
