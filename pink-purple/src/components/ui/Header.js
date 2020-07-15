@@ -28,10 +28,16 @@ function ElevationScroll(props) {
   const useStyles = makeStyles(theme=>({
     toolbarMargin:{
         ...theme.mixins.toolbar,
-        marginBottom:'3em'
+        marginBottom:'4em'
     },
     logo:{
-      height:"7em"  
+      height:"9em"  
+    },
+    logoContainer:{
+        padding:0,
+        "&:hover":{
+            backgroundColor:"transparent"
+        }
     },
     tabContainer:{
         marginLeft:'auto'
@@ -66,10 +72,10 @@ function ElevationScroll(props) {
         <ElevationScroll color='primary'>
             <AppBar position='fixed'>
                 <Toolbar disableGutters>
-                <Button component={Link} to="">
+                <Button component={Link} to="/"disableRipple onClick={()=>setValue(0)}className={classes.logoContainer}>
                 <img alt='my logo'className={classes.logo} src={logo}/>
                 </Button>
-                <Tabs value={value} onChange={handleChange} indicatorColor='secondary' className={classes.tabContainer}>
+                <Tabs value={value} onChange={handleChange} indicatorColor='primary' className={classes.tabContainer}>
                     <Tab className={classes.tab} component={Link} to="/" label="Home"/>
                     <Tab className={classes.tab} component={Link} to="/About" label="About"/>
                     <Tab className={classes.tab} component={Link} to="/Contact" label="Contact"/>

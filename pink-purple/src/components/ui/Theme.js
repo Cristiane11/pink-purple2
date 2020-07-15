@@ -38,7 +38,8 @@ export default createMuiTheme({
         marginTop:'15px',
         fontSize:"1.5rem",
         fontWeight:200,
-        textTransform:"none"
+        textTransform:"none",
+        height:"45px"
       }
       
     } 

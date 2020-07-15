@@ -5,20 +5,24 @@ import { Link } from "react-router-dom";
 import About from "./About";
 
 
+
 const useStyles = makeStyles(theme=>({
   button:{
       ...theme.customButton.button,
-      color:'white',
+      color:'white'
+     
   
   }
 }));
-
+const handleClick = ()=>{
+  
+}
   function Entrance(){
     const classes = useStyles()
     return(
       <React.Fragment>
          <Button variant="contained" color="secondary"className={classes.button}>
-        <p component={Link} to="./About">About Me</p>
+        <p component={Link} to="./About" disableRipple onClick={About}>About Me</p>
         </Button>
        <div className={classes.customButton}/> 
       </React.Fragment>
