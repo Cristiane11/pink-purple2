@@ -54,10 +54,30 @@ function ElevationScroll(props) {
  function Header(props){
      const classes = useStyles();
      const[value,setValue] = useState(0);
+     const [anchorEl,setAnchorEl] = useState(null);
+     const[open,setOpen] = useState(false);
+     const [selectedIndex, setSelectedIndex] = useState(0)
       
      const handleChange = (e,value)=>{
          setValue(value);
-     }
+     };
+     const handleClick = e=>{
+      setAnchorEl(e.currentTarget);
+      setOpen(true);
+    };
+    const handleMenuItemClick = (e, i)=>{
+      setAnchorEl(null);
+      setOpen(false);
+      setSelectedIndex(i)
+    }
+    const handleClose = e => {
+      setAnchorEl(null);
+      setOpen(false);
+    };
+    const menuOptions = [{name:"About", link:"/About"},{name:"Skills", link:"/Skills"},{name:"Education", link:"/Education"},{name:"Resume", link:"/Resume"}]
+
+
+
      useEffect(()=>{
         if(window.location.pathname==='/'&& value !==0){
             setValue(0)
@@ -67,7 +87,107 @@ function ElevationScroll(props) {
             setValue(2)
           }else if (window.location.pathname==='/Portfolio'&& value !==3){
             setValue(3);
-          }  
+          } 
+          switch (window.location.pathname){
+            case "/":
+              if (value !==0) {
+              setValue(0)
+              }
+              break;
+            case "/services":
+              if (value !==1) {
+              setValue(1);
+              setSelectedIndex(0)
+              }
+              break;
+            case "/customsoftware":
+              if (value !==1) {
+              setValue(1);
+              setSelectedIndex(1)
+              }
+              break;
+            case "/mobileapps":
+              if (value !==1) {
+              setValue(1);
+              setSelectedIndex(2)
+              }
+              break;
+            case "/websites":
+              if (value !==1) {
+              setValue(1);
+              setSelectedIndex(3)
+              }
+              break;
+            case "/revolution":
+              if (value !==2) {
+              setValue(2);
+              }
+              break;
+           
+            case "/about":
+              if (value !==3) {
+              setValue(3);
+              }
+              break;
+            
+            case "/contact":
+              if (value !==4) {
+              setValue(4);
+              }
+              break;
+        
+           
+            case "/estimate":
+              if (value !==5) {
+              setValue(5);
+              }
+              break;
+              default:
+              break;
+          }switch (window.location.pathname){
+        case "/":
+          if (value !==0) {
+          setValue(0)
+          }
+          break;
+        case "/About":
+          if (value !==1) {
+          setValue(1);
+          setSelectedIndex(0)
+          }
+          break;
+        case "/Skills":
+          if (value !==1) {
+          setValue(1);
+          setSelectedIndex(1)
+          }
+          break;
+        case "/Education":
+          if (value !==1) {
+          setValue(1);
+          setSelectedIndex(2)
+          }
+          break;
+        case "/Resume":
+          if (value !==1) {
+          setValue(1);
+          setSelectedIndex(3)
+          }
+          break;
+        case "/Contact":
+          if (value !==2) {
+          setValue(2);
+          }
+          break;
+       
+        case "/Portfolio":
+          if (value !==3) {
+          setValue(3);
+          }
+          break;
+          default:
+          break;
+      }
      },[value]);
     return(
         <React.Fragment>
@@ -79,12 +199,18 @@ function ElevationScroll(props) {
                 </Button>
                 <Tabs value={value} onChange={handleChange} indicatorColor='primary' className={classes.tabContainer}>
                     <Tab className={classes.tab} component={Link} to="/" label="Home"/>
-                    <Tab className={classes.tab} component={Link} to="/About" label="About"/>
+                    <Tab aria-owns ={anchorEl ? "simple-menu" : undefined} aria-haspopup={anchorEl ? "true":undefined} onMouseOver={event=>handleClick(event)} className={classes.tab} component={Link} to='/About'  label="About"/>
                     <Tab className={classes.tab} component={Link} to="/Contact" label="Contact"/>
                     <Tab className={classes.tab} component={Link} to="/Portfolio" label="Portfolio"/>
                     <Tab className={classes.tab} component={Link} to="" icon={<PhoneIcon />}/>
-   
                 </Tabs>
+                <Menu id="simple-menu" anchorEl={anchorEl} open={open} onClose={handleClose} classes={{paper:classes.menu}} MenuListProps={{onMouseLeave: handleClose}}elevation={0}>
+                    {menuOptions.map((option, i)=>(
+                      <MenuItem key={option} component={Link}  to={option.link} classes={{root:classes.menuItem}} onClick ={(event)=>{handleMenuItemClick(event,i); setValue(1); handleClose()}} selected={i === selectedIndex && value ===1}>{option.name}</MenuItem>
+                    ))}
+                </Menu>
+
+
                 </Toolbar>
             </AppBar>
         </ElevationScroll>
