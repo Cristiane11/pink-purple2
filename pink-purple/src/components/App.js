@@ -16,6 +16,10 @@ function App() {
              <Route exact path="/About"component={()=><div>About</div>}/>
              <Route exact path="/Contact"component={()=><div>Contact Us</div>}/>
              <Route exact path="/Portfolio"component={()=><div>Portfolio</div>}/>
+             <Route exact path="/Skills"component={()=><div>Skills</div>}/>
+             <Route exact path="/Resume"component={()=><div>Resume </div>}/>
+             <Route exact path="/Education"component={()=><div>Education</div>}/>
+             
            </Switch>
       </BrowserRouter>
       <Entrance/>
