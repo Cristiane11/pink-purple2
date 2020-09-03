@@ -48,6 +48,18 @@ function ElevationScroll(props) {
         ...theme.typography.tab,
         minWidth:10,
         marginLeft:"25px"
+    },
+    menu:{
+      backgroundColor:theme.palette.common.purple,
+      color:"purple",
+      borderRadius:"0px"
+    },
+    MenuItem:{
+      ...theme.typography.tab,
+      opacity:0.7,
+      "&:hover":{
+        opacity:1
+      }
     }
 }));
 
