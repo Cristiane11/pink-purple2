@@ -51,7 +51,7 @@ function ElevationScroll(props) {
     },
     menu:{
       backgroundColor:theme.palette.common.purple,
-      color:"purple",
+      color:"#590EED",
       borderRadius:"0px"
     },
     MenuItem:{
