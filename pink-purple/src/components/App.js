@@ -23,8 +23,6 @@ function App() {
            </Switch>
       </BrowserRouter>
       <Entrance/>
-      
-
     </ThemeProvider>
   );
 }

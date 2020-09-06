@@ -13,8 +13,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 
-
-
 function ElevationScroll(props) {
     const { children} = props;
     const trigger = useScrollTrigger({
@@ -52,7 +50,11 @@ function ElevationScroll(props) {
     menu:{
       backgroundColor:theme.palette.common.purple,
       color:"#590EED",
-      borderRadius:"0px"
+      borderRadius:"0px",
+      fontFamily:"Playfair",
+      textTransform:"none",
+      fontSize:"1rem",
+      fontWeight:700
     },
     MenuItem:{
       ...theme.typography.tab,
@@ -73,7 +75,7 @@ function ElevationScroll(props) {
      const handleChange = (e,value)=>{
          setValue(value);
      };
-     const handleClick = e=>{
+     const handleClick = (e)=>{
       setAnchorEl(e.currentTarget);
       setOpen(true);
     };
@@ -218,7 +220,7 @@ function ElevationScroll(props) {
                 </Tabs>
                 <Menu id="simple-menu" anchorEl={anchorEl} open={open} onClose={handleClose} classes={{paper:classes.menu}} MenuListProps={{onMouseLeave: handleClose}}elevation={0}>
                     {menuOptions.map((option, i)=>(
-                      <MenuItem key={option} component={Link}  to={option.link} classes={{root:classes.menuItem}} onClick ={(event)=>{handleMenuItemClick(event,i); setValue(1); handleClose()}} selected={i === selectedIndex && value ===1}>{option.name}</MenuItem>
+                    <MenuItem key={option} component={Link}  to={option.link} classes={{root:classes.menuItem}} onClick ={(event)=>{handleMenuItemClick(event,i); setValue(1); handleClose()}} selected={i === selectedIndex && value ===1}>{option.name}</MenuItem>
                     ))}
                 </Menu>
 
