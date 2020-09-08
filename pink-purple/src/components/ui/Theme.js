@@ -1,11 +1,9 @@
 import React from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
-
-
     const lindoPurple ='#e1bee7'
     const lindoPink ='#f48fb1'
 
-export default createMuiTheme({
+const theme = createMuiTheme({
     
     palette: {
         common:{
@@ -44,4 +42,5 @@ export default createMuiTheme({
       
     } 
   });
+  export default theme;
 
