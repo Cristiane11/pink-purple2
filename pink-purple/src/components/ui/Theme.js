@@ -39,7 +39,6 @@ const theme = createMuiTheme({
         textTransform:"none",
         height:"45px"
       }
-      
     } 
   });
   export default theme;

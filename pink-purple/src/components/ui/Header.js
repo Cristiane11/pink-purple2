@@ -1,27 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useCallback } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import logo from '../../assets/logo.png';
 import PhoneIcon from '@material-ui/icons/Phone';
-import { Link } from "react-router-dom";
-import { Button } from '@material-ui/core';
+import {Link} from "react-router-dom";
+import Button  from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { useIsFocusVisible } from '@material-ui/core';
 
 
 function ElevationScroll(props) {
     const { children} = props;
     const trigger = useScrollTrigger({
       disableHysteresis: true,
-      threshold: 0
+      threshold: 0,
     });
   
     return React.cloneElement(children, {
-      elevation: trigger ? 4 : 0,
+      elevation: trigger ? 4 : 0
     });
   }
  
@@ -75,7 +76,7 @@ function ElevationScroll(props) {
      const handleChange = (e,value)=>{
          setValue(value);
      };
-     const handleClick = (e)=>{
+     const handleClick = e =>{
       setAnchorEl(e.currentTarget);
       setOpen(true);
     };
@@ -93,7 +94,7 @@ function ElevationScroll(props) {
 
 
      useEffect(()=>{
-        if(window.location.pathname==='/'&& value !==0){
+        /*if(window.location.pathname==='/'&& value !==0){
             setValue(0)
           }else if (window.location.pathname==='/About'&& value !==1){
             setValue(1)
@@ -101,64 +102,8 @@ function ElevationScroll(props) {
             setValue(2)
           }else if (window.location.pathname==='/Portfolio'&& value !==3){
             setValue(3);
-          } 
+          } */
           switch (window.location.pathname){
-            case "/":
-              if (value !==0) {
-              setValue(0)
-              }
-              break;
-            case "/services":
-              if (value !==1) {
-              setValue(1);
-              setSelectedIndex(0)
-              }
-              break;
-            case "/customsoftware":
-              if (value !==1) {
-              setValue(1);
-              setSelectedIndex(1)
-              }
-              break;
-            case "/mobileapps":
-              if (value !==1) {
-              setValue(1);
-              setSelectedIndex(2)
-              }
-              break;
-            case "/websites":
-              if (value !==1) {
-              setValue(1);
-              setSelectedIndex(3)
-              }
-              break;
-            case "/revolution":
-              if (value !==2) {
-              setValue(2);
-              }
-              break;
-           
-            case "/about":
-              if (value !==3) {
-              setValue(3);
-              }
-              break;
-            
-            case "/contact":
-              if (value !==4) {
-              setValue(4);
-              }
-              break;
-        
-           
-            case "/estimate":
-              if (value !==5) {
-              setValue(5);
-              }
-              break;
-              default:
-              break;
-          }switch (window.location.pathname){
         case "/":
           if (value !==0) {
           setValue(0)
